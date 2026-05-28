@@ -2,7 +2,7 @@ import csv
 
 archivo = "videojuegos.csv"
 
-# Función para validar datos
+
 def validar_datos(codigo, nombre, genero, plataforma, año):
 
     if codigo == "" or nombre == "" or genero == "" or plataforma == "" or año == "":
@@ -14,7 +14,7 @@ def validar_datos(codigo, nombre, genero, plataforma, año):
     return True
 
 
-# Función para registrar videojuegos
+
 def registrar_videojuego():
 
     codigo = input("Ingrese código: ")
@@ -23,10 +23,10 @@ def registrar_videojuego():
     plataforma = input("Ingrese plataforma: ")
     año = input("Ingrese año: ")
 
-    # Validación
+
     if validar_datos(codigo, nombre, genero, plataforma, año):
 
-        # Guardar en CSV
+        
         with open(archivo, mode="a", newline="", encoding="utf-8") as file:
 
             escritor = csv.writer(file)
@@ -45,7 +45,7 @@ def registrar_videojuego():
         print("Error: Datos inválidos.")
 
 
-# Función para editar videojuegos
+
 def editar_videojuego():
 
     codigo_buscar = input("Ingrese el código del videojuego a editar: ")
@@ -55,7 +55,7 @@ def editar_videojuego():
 
     try:
 
-        # Leer archivo CSV
+        
         with open(archivo, mode="r", newline="", encoding="utf-8") as file:
 
             lector = csv.reader(file)
@@ -130,7 +130,7 @@ def editar_videojuego():
                 else:
                     videojuegos.append(fila)
 
-        # Guardar cambios
+       
         if encontrado:
 
             with open(archivo, mode="w", newline="", encoding="utf-8") as file:
@@ -145,7 +145,7 @@ def editar_videojuego():
         print("Error: El archivo no existe.")
 
 
-# Crear archivo CSV con encabezados si no existe
+
 try:
 
     with open(archivo, mode="x", newline="", encoding="utf-8") as file:
@@ -164,7 +164,7 @@ except FileExistsError:
     pass
 
 
-# Menú principal
+
 while True:
 
     print("\n=== SISTEMA DE REGISTRO DE VIDEOJUEGOS ===")
