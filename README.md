@@ -48,7 +48,8 @@ except FileExistsError:
 while True:
     print("\n=== SISTEMA DE REGISTRO DE VIDEOJUEGOS ===")
     print("1. Registrar videojuego")
-    print("2. Salir")
+    print("2. Actualizar videojuego")
+    print("3. Salir")
 
     opcion = input("Seleccione una opción: ")
 
@@ -56,8 +57,9 @@ while True:
         registrar_videojuego()
 
     elif opcion == "2":
-        print("Saliendo del sistema...")
-        break
-
+        editar_videojuegos()
+    elif opcion == "3":
+    print("Saliendo del sistema...")
+    break
     else:
         print("Opción inválida.")
