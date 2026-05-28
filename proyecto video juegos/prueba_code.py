@@ -1,4 +1,4 @@
-mport csv
+import csv
 
 archivo = "videojuegos.csv"
 
